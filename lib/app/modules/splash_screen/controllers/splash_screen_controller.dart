@@ -1,12 +1,16 @@
 import 'package:get/get.dart';
 
+import '../services/splash_services.dart';
+
 class SplashScreenController extends GetxController {
   //TODO: Implement SplashScreenController
 
-  final count = 0.obs;
-
+  SplashServices splashServices = SplashServices();
 
   @override
-  void onClose() {}
-  void increment() => count.value++;
+  void onInit() {
+    splashServices.isLogin();
+
+    super.onInit();
+  }
 }

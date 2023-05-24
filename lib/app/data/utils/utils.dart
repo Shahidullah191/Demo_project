@@ -1,3 +1,4 @@
+import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
@@ -35,5 +36,22 @@ class Utils {
 
   static snackBar(String title, String message) {
     Get.snackbar(title, message);
+  }
+
+  static flashbar(
+    String title,
+    String message,
+  ) {
+    Flushbar(
+      title: title,
+      message: message,
+      icon: Icon(
+        Icons.info_outline,
+        size: 28.0,
+        color: Colors.blue[300],
+      ),
+      duration: const Duration(seconds: 3),
+      leftBarIndicatorColor: Colors.blue[300],
+    ).show(Get.context!);
   }
 }
